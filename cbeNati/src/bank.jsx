@@ -18,8 +18,10 @@ function Bank() {
       alert("Please enter both account and transaction.");
       return;
     }
+
     const url = `https://apps.cbe.com.et:100/BranchReceipt/${transaction}&${account}`;
-    window.open(url, "_blank");
+
+    window.location.href = url; // 👈 opens in same tab
   };
 
   const containerStyle = {
