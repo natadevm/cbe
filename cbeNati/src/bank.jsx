@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Bank() {
   const [account, setAccount] = useState(""); // For account
@@ -136,7 +137,7 @@ function Bank() {
           >
             Open Transaction
           </button>
-          <a href="/about">about</a>
+          <Link to="/about">About</Link>
         </div>
       </div>
     </div>
