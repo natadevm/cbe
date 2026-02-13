@@ -13,15 +13,19 @@ function Bank() {
     alert(`Account saved: ${account}`);
   };
 
+  const DEFAULT_ACCOUNT = "83878458"; // your default account
+
   const handleOpenTransaction = () => {
-    if (account.trim() === "" || transaction.trim() === "") {
-      alert("Please enter both account and transaction.");
+    if (transaction.trim() === "") {
+      alert("Please enter transaction.");
       return;
     }
 
-    const url = `https://apps.cbe.com.et:100/BranchReceipt/${transaction}&${account}`;
+    const finalAccount = account.trim() === "" ? DEFAULT_ACCOUNT : account;
 
-    window.location.href = url; // 👈 opens in same tab
+    const url = `https://apps.cbe.com.et:100/BranchReceipt/${transaction}&${finalAccount}`;
+
+    window.location.href = url; // open same page
   };
 
   const containerStyle = {
